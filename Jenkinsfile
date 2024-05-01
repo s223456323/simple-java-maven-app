@@ -12,7 +12,8 @@ pipeline {
         success {
             emailext subject: 'Pipeline Success',
                       body: 'Your pipeline has succeeded.',
-                      to: 'y.b.n.udara@email.com'
+                      to: 'y.b.n.udara@email.com',
+                      attachLog: true
         }
     }
 }

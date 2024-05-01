@@ -19,8 +19,7 @@ pipeline {
                     echo "Tests passed, proceeding to next stages"
                     mail subject: 'Tests Passed',
                          body: 'The unit and integration tests passed.',
-                         to: 'y.b.n.udara@gmail.com',
-                         attachLog: true
+                         to: 'y.b.n.udara@gmail.com'
                 }
                 failure {
                     echo "Tests failed, stopping the pipeline"
@@ -29,8 +28,7 @@ pipeline {
                     }
                     mail subject: 'Tests Failed',
                          body: 'The unit and integration tests failed.',
-                         to: 'y.b.n.udara@gmail.com',
-                         attachLog: true
+                         to: 'y.b.n.udara@gmail.com'
                 }
             }
         }
@@ -50,8 +48,7 @@ pipeline {
                     echo "Security scan passed, proceeding to next stages"
                     mail subject: 'Security scan Passed',
                          body: 'Security scan passed.',
-                         to: 'y.b.n.udara@gmail.com',
-                         attachLog: true
+                         to: 'y.b.n.udara@gmail.com'
                 }
                 failure {
                     echo "Security scan failed, stopping the pipeline"
@@ -60,8 +57,7 @@ pipeline {
                     }
                     mail subject: 'Tests Failed',
                          body: 'Security scan failed.',
-                         to: 'y.b.n.udara@gmail.com',
-                         attachLog: true
+                         to: 'y.b.n.udara@gmail.com'
                 }
             }
         }

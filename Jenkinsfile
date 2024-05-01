@@ -19,7 +19,7 @@ pipeline {
                     echo "Tests passed, proceeding to next stages"
                     mail subject: 'Tests Passed',
                          body: 'The unit and integration tests passed.',
-                         to: 'y.b.n.udara@email.com',
+                         to: 'y.b.n.udara@gmail.com',
                          attachLog: true
                 }
                 failure {
@@ -27,7 +27,7 @@ pipeline {
                     currentBuild.result = 'FAILURE'
                     mail subject: 'Tests Failed',
                          body: 'The unit and integration tests failed.',
-                         to: 'y.b.n.udara@email.com',
+                         to: 'y.b.n.udara@gmail.com',
                          attachLog: true
                 }
             }
@@ -48,7 +48,7 @@ pipeline {
                     echo "Security scan passed, proceeding to next stages"
                     mail subject: 'Security scan Passed',
                          body: 'Security scan passed.',
-                         to: 'y.b.n.udara@email.com',
+                         to: 'y.b.n.udara@gmail.com',
                          attachLog: true
                 }
                 failure {
@@ -56,7 +56,7 @@ pipeline {
                     currentBuild.result = 'FAILURE'
                     mail subject: 'Tests Failed',
                          body: 'Security scan failed.',
-                         to: 'y.b.n.udara@email.com',
+                         to: 'y.b.n.udara@gmail.com',
                          attachLog: true
                 }
             }

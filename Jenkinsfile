@@ -24,7 +24,9 @@ pipeline {
                 }
                 failure {
                     echo "Tests failed, stopping the pipeline"
-                    currentBuild.result = 'FAILURE'
+                    script {
+                        currentBuild.result = 'FAILURE'
+                    }
                     mail subject: 'Tests Failed',
                          body: 'The unit and integration tests failed.',
                          to: 'y.b.n.udara@gmail.com',
@@ -53,7 +55,9 @@ pipeline {
                 }
                 failure {
                     echo "Security scan failed, stopping the pipeline"
-                    currentBuild.result = 'FAILURE'
+                    script {
+                        currentBuild.result = 'FAILURE'
+                    }
                     mail subject: 'Tests Failed',
                          body: 'Security scan failed.',
                          to: 'y.b.n.udara@gmail.com',

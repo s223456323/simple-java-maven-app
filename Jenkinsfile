@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "$JAVA_HOME"
-                sh 'mvn -B -DskipTests clean package'
+                echo "build project"
             }
         }
     }

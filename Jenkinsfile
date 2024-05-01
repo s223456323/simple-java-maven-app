@@ -17,18 +17,20 @@ pipeline {
             post {
                 success {
                     echo "Tests passed, proceeding to next stages"
-                    mail subject: 'Tests Passed',
+                    emailext subject: 'Tests Passed',
                          body: 'The unit and integration tests passed.',
-                         to: 'y.b.n.udara@gmail.com'
+                         to: 'y.b.n.udara@gmail.com',
+                         attachLog: true
                 }
                 failure {
                     echo "Tests failed, stopping the pipeline"
                     script {
                         currentBuild.result = 'FAILURE'
                     }
-                    mail subject: 'Tests Failed',
+                    emailext subject: 'Tests Failed',
                          body: 'The unit and integration tests failed.',
-                         to: 'y.b.n.udara@gmail.com'
+                         to: 'y.b.n.udara@gmail.com',
+                         attachLog: true
                 }
             }
         }
@@ -46,18 +48,20 @@ pipeline {
             post {
                 success {
                     echo "Security scan passed, proceeding to next stages"
-                    mail subject: 'Security scan Passed',
+                    emailext subject: 'Security scan Passed',
                          body: 'Security scan passed.',
-                         to: 'y.b.n.udara@gmail.com'
+                         to: 'y.b.n.udara@gmail.com',
+                         attachLog: true
                 }
                 failure {
                     echo "Security scan failed, stopping the pipeline"
                     script {
                         currentBuild.result = 'FAILURE'
                     }
-                    mail subject: 'Tests Failed',
+                    emailext subject: 'Tests Failed',
                          body: 'Security scan failed.',
-                         to: 'y.b.n.udara@gmail.com'
+                         to: 'y.b.n.udara@gmail.com',
+                         attachLog: true
                 }
             }
         }
